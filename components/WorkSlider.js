@@ -20,12 +20,12 @@ const workSlides = {
         {
           title: 'title',
           path: '/image3.png',
-          Link: 'https://github.com/Prince-695/Mini-Project-Stop-Watch',
+          Link: 'https://github.com/Prince-695/my-portfolio',
         },
         {
           title: 'title',
           path: '/image4.png',
-          Link: 'https://github.com/Prince-695/Mini-Project-Stop-Watch',
+          Link: 'https://github.com/Prince-695/my-portfolio',
         },
       ],
     },
