@@ -31,3 +31,21 @@ Follow these steps to set up the project locally:
 ```bash
 git clone https://github.com/Prince-695/my-portfolio.git
 cd my-portfolio
+
+```
+### **2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
+```
+### **3. Start the Development Server
+```bash
+npm run dev
+# or
+yarn dev
+```
+-- **Your portfolio will be live at http://localhost:3000. 🎉
+
+### **🌐 Portfolio Link
+-- **Check out the live version of my portfolio: 
