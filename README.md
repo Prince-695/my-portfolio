@@ -45,7 +45,7 @@ npm run dev
 # or
 yarn dev
 ```
--- **Your portfolio will be live at http://localhost:3000. 🎉
+- **Your portfolio will be live at http://localhost:3000. 🎉
 
 ### **🌐 Portfolio Link**
--- **Check out the live version of my portfolio: 
+- **Check out the live version of my portfolio**: 
