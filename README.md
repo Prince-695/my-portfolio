@@ -49,4 +49,4 @@ yarn dev
 - **Your portfolio will be live at http://localhost:3000. 🎉
 
 ### **🌐 Portfolio Link**
-- **Check out the live version of my portfolio**: princerathod.vercel.app
+- **Check out the live version of my portfolio**: http://princerathod.vercel.app
