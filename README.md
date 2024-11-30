@@ -1,8 +1,5 @@
-# 🌟 **My Personal Portfolio**
-
-Welcome to my personal portfolio repository! 🚀 This project is my digital showcase, reflecting my skills, projects, and passion for modern web development.
-
----
+# 🌟 **NOT My Personal Portfolio**
+-
 
 ## 🔧 **Tech Stack**
 
