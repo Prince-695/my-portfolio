@@ -13,6 +13,17 @@ This portfolio leverages powerful web technologies to deliver a seamless experie
 
 ---
 
+## 🛠️ **Technologies Used**
+
+<p align="center">
+  <img src="https://cdn.worldvectorlogo.com/logos/next-js.svg" alt="Next.js" width="80" height="80" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cdn.worldvectorlogo.com/logos/tailwindcss.svg" alt="Tailwind CSS" width="80" height="80" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/framer/motion/main/.github/framer-motion.svg" alt="Framer Motion" width="80" height="80" />
+</p>
+
+
 ## ✨ **Features**
 
 - ⚡ **High Performance**: Optimized for speed and efficiency.  
