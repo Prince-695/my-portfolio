@@ -4,16 +4,16 @@ import { RiWhatsappFill, RiInstagramLine, RiLinkedinLine, RiWhatsappLine, RiSnap
 
 const Socials = () => {
   return <div className="flex items-center text-[25px] gap-x-5 " >
-    <Link href={'https://github.com/Prince-695'} className="hover:text-accent transition-all duration-300 " >
+    <Link target="_blank" href={'https://github.com/Prince-695'} className="hover:text-accent transition-all duration-300 " >
       <RiGithubFill />
     </Link>
     {/* <Link href={''} className="hover:text-accent transition-all duration-300 " >
       <RiDiscordFill />
     </Link> */}
-    <Link href={'https://www.linkedin.com/in/prince-rathod-3a9b1b2b8/'} className="hover:text-accent transition-all duration-300 " >
+    <Link target="_blank" href={'https://www.linkedin.com/in/prince-rathod-3a9b1b2b8/'} className="hover:text-accent transition-all duration-300 " >
       <RiLinkedinFill />
     </Link>
-    <Link href={'mailto:rathodprince411@gmail.com'} className="hover:text-accent transition-all duration-300 " >
+    <Link target="_blank" href={'mailto:rathodprince411@gmail.com'} className="hover:text-accent transition-all duration-300 " >
       <RiMailFill />
     </Link>
   </div>;
