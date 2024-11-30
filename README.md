@@ -8,14 +8,6 @@ Welcome to my personal portfolio repository! 🚀 This project is my digital sho
 
 This portfolio leverages powerful modern technologies to deliver an exceptional experience:  
 
-<p align="center">
-  <img src="https://cdn.worldvectorlogo.com/logos/next-js.svg" alt="Next.js" width="80" height="80" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://cdn.worldvectorlogo.com/logos/tailwindcss.svg" alt="Tailwind CSS" width="80" height="80" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="file:///C:/Users/PRINCE/Downloads/framer-motion.svg" alt="Framer Motion" width="80" height="80" />
-</p>
-
 - **[Next.js](https://nextjs.org/)**: Framework for server-side rendering and static site generation.  
 - **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS for stunning and responsive designs.  
 - **[Framer Motion](https://www.framer.com/motion/)**: Smooth animations and transitions for a delightful user experience.  
