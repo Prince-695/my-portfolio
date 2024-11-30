@@ -13,7 +13,7 @@ This portfolio leverages powerful modern technologies to deliver an exceptional 
   &nbsp;&nbsp;&nbsp;
   <img src="https://cdn.worldvectorlogo.com/logos/tailwindcss.svg" alt="Tailwind CSS" width="80" height="80" />
   &nbsp;&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Prince-695/logos/main/framer-motion.svg" alt="Framer Motion" width="80" height="80" />
+  <img src="file:///C:/Users/PRINCE/Downloads/framer-motion.svg" alt="Framer Motion" width="80" height="80" />
 </p>
 
 - **[Next.js](https://nextjs.org/)**: Framework for server-side rendering and static site generation.  
