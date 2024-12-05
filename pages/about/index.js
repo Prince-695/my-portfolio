@@ -64,19 +64,16 @@ export const aboutData = [
     title: 'experience',
     info: [
       {
-        title: 'None - Open to Work',
-        stage: 'Still a fresher in this field',
+        title: 'Open to Work',
+        stage: 'Seeking web development opportunities',
       },
-      // {
-      //   title: 'Web Developer - ABC Agency',
-      //   stage: '2010 - 2012',
-      // },
-      // {
-      //   title: 'Intern - DEF Corporation',
-      //   stage: '2008 - 2010',
-      // },
+      {
+        title: 'Hackathon Experience',
+        stage: 'Collaborated on innovative projects',
+      },
     ],
   },
+  
   {
     title: 'credentials',
     info: [
