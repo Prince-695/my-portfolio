@@ -5,6 +5,8 @@ import { fadeIn } from '../../variants';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
+  const myEmail = 'rathodprince411@gmail.com'; // Your email to validate against
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,6 +25,13 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validation: Check if the email matches your email
+    if (formData.email.trim() === myEmail) {
+      alert('You cannot use this email address. Try using your own email address.');
+      return;
+    }
+
+    // Proceed with EmailJS
     emailjs
       .send(
         'service_t0hbubc', // Replace with your EmailJS Service ID
