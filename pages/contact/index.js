@@ -5,7 +5,7 @@ import { fadeIn } from '../../variants';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
-  const myEmail = 'rathodprince411@gmail.com'; // Your email to validate against
+  const myEmail = 'rathodprince411@gmail.com'; // Your email for validation
 
   const [formData, setFormData] = useState({
     name: '',
@@ -25,24 +25,33 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation: Check if the email matches your email
+    // Validation: Ensure user is not using your email
     if (formData.email.trim() === myEmail) {
-      alert('You cannot use this email address. Try using your own email address.');
+      alert('You cannot use this email address. Please enter your own email.');
       return;
     }
 
-    // Proceed with EmailJS
+    // Validation: Ensure all fields are filled
+    if (!formData.name || !formData.email || !formData.message) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+
+    // Prepare the EmailJS payload
+    const emailParams = {
+      name: formData.name,        // User's name
+      email: formData.email,      // User's email
+      subject: formData.subject,  // Email subject
+      message: formData.message,  // User's message
+    };
+
+    // Send the email via EmailJS
     emailjs
       .send(
-        'service_t0hbubc', // Replace with your EmailJS Service ID
-        'template_huosmhx', // Replace with your EmailJS Template ID
-        {
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        '2uQj5m_sibr284pcv' // Replace with your EmailJS User ID
+        'service_t0hbubc',      // Replace with your EmailJS Service ID
+        'template_huosmhx',     // Replace with your EmailJS Template ID
+        emailParams,            // Data to send
+        '2uQj5m_sibr284pcv'     // Replace with your EmailJS User ID
       )
       .then(
         (response) => {
@@ -56,7 +65,7 @@ const Contact = () => {
           });
         },
         (error) => {
-          console.log('FAILED...', error);
+          console.error('FAILED...', error);
           alert('Failed to send the message. Please try again.');
         }
       );
@@ -65,9 +74,9 @@ const Contact = () => {
   return (
     <div className="h-full">
       <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
-        {/* text & form */}
+        {/* Text & Form */}
         <div className="flex flex-col w-full max-w-[700px]">
-          {/* text */}
+          {/* Heading */}
           <motion.h2
             variants={fadeIn('up', 0.2)}
             initial="hidden"
@@ -77,7 +86,7 @@ const Contact = () => {
           >
             Let&apos;s <span className="text-accent">Connect.</span>
           </motion.h2>
-          {/* form */}
+          {/* Form */}
           <motion.form
             variants={fadeIn('up', 0.4)}
             initial="hidden"
@@ -86,6 +95,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
             className="flex-1 flex flex-col gap-6 w-full mx-auto"
           >
+            {/* Name and Email Fields */}
             <div className="flex gap-x-6 w-full">
               <input
                 type="text"
@@ -104,6 +114,7 @@ const Contact = () => {
                 className="input"
               />
             </div>
+            {/* Subject Field */}
             <input
               type="text"
               name="subject"
@@ -112,6 +123,7 @@ const Contact = () => {
               onChange={handleChange}
               className="input"
             />
+            {/* Message Field */}
             <textarea
               name="message"
               placeholder="Message"
@@ -119,6 +131,7 @@ const Contact = () => {
               onChange={handleChange}
               className="textarea"
             />
+            {/* Submit Button */}
             <button
               type="submit"
               className="btn rounded-full border-2 border-white/30 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group"

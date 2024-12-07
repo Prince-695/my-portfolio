@@ -10,10 +10,14 @@
   },
   "dependencies": {
     "@next/font": "^13.4.4",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "emailjs-com": "^3.2.0",
+    "express": "^4.21.2",
     "framer-motion": "^10.12.16",
     "next": "13.4.3",
     "next-ui": "^0.9.0",
+    "nodemailer": "^6.9.16",
     "react": "18.2.0",
     "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
@@ -29,5 +33,10 @@
     "eslint-config-next": "13.4.3",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
-  }
+  },
+  "description": "Welcome to my personal portfolio repository! 🚀 This project is my digital showcase, reflecting my skills, projects, and passion for modern web development.",
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
