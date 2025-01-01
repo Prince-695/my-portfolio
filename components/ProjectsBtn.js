@@ -21,7 +21,7 @@ import { RxDownload } from "react-icons/rx";
 const ProjectsBtn = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/resume.final.pdf"; // Path to your PDF file in the public folder
+    link.href = "/Prince-Resume.pdf"; // Path to your PDF file in the public folder
     link.download = "Resume.pdf"; // Desired filename for the downloaded file
     link.click();
   };
