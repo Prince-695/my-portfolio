@@ -1,5 +1,6 @@
 //fonts
 import { Sora } from '@next/font/google'
+import Head from 'next/head'
 
 //font settings
 const sora = Sora({
@@ -13,12 +14,27 @@ import Header from './Header';
 import TopLeftImg from './topLeftImg';
 
 const Layout = ({children}) => {
-  return <div className={'page bg-[#000000] text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative'}>
-    {/* <TopLeftImg /> */}
-    <Nav />
-    <Header />
-    {children}
-  </div>;
+  return (
+    <>
+      <Head>
+        <title>Prince Portfolio</title>
+        <meta name="description" content="Prince professional portfolio showcasing web development projects and skills" />
+        <meta name="keywords" content="web developer, portfolio, Prince, React, Next.js, JavaScript, Typescript, Tailwind CSS, Vercel, Github, Node, Express" />
+        <meta name="author" content="Prince" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/logo.png" type="image/png" />
+      </Head>
+      
+      <div className={`page bg-[#000000] text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}>
+        {/* <TopLeftImg /> */}
+        <Nav />
+        <Header />
+        {children}
+      </div>
+    </>
+  );
 };
 
 export default Layout;
