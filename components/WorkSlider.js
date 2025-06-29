@@ -1,35 +1,51 @@
 // data
 const workSlides = {
   slides: [
+    
     {
       images: [
         {
-          title: 'title',
-          path: '/image1.png',
-          Link: 'https://github.com/Prince-695/Xenith.com',
-        },
-        {
-          title: 'title',
-          path: '/image2.png',
-          Link: 'https://github.com/Prince-695/Xenith.com',
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: 'title',
+          title: 'Portfolio',
           path: '/image3.png',
           Link: 'https://github.com/Prince-695/my-portfolio',
         },
         {
-          title: 'title',
-          path: '/image4.png',
-          Link: 'https://github.com/Prince-695/my-portfolio',
+          title: 'Zentry clone-Xenith',
+          path: '/zentry.png',
+          Link: 'https://zentry-xenith.vercel.app/',
+        },
+      ],
+    },
+
+    {
+      images: [
+        {
+          title: 'Storix-Google drive clone',
+          path: '/storeit.png',
+          Link: 'https://github.com/Prince-695/storix',
+        },
+        {
+          title: 'Aspire AI',
+          path: '/aspireai.png',
+          Link: 'https://aspire-ai-mauve.vercel.app/',
         },
       ],
     },
     
+    {
+      images: [
+        {
+          title: 'Muzik Skill House',
+          path: '/msh.png',
+          Link: 'https://muzikskillhouse.com',
+        },
+        // {
+        //   title: 'Aspire AI',
+        //   path: '/aspireai.png',
+        //   Link: 'https://aspire-ai-mauve.vercel.app/',
+        // },
+      ],
+    },
   ],
 };
 
@@ -70,9 +86,6 @@ const WorkSlider = () => {
                     <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300 " >
                       <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]" >
                         {/* title part 1 */}
-                        <div className="delay-100 " >
-                        GitHub
-                        </div>
                         {/* title part 2 */}
                         <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150 " >
                         Link

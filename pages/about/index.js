@@ -64,6 +64,10 @@ export const aboutData = [
     title: 'experience',
     info: [
       {
+        title: 'Co-founder - Spiffy (Web Agency)',
+        stage: 'February 2025 - Present',
+      },
+      {
         title: 'Open to Work',
         stage: 'Seeking web development opportunities',
       },
