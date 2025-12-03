@@ -18,7 +18,7 @@ const Layout = ({children}) => {
     <>
       <Head>
         <title>Prince Portfolio</title>
-        <meta name="description" content="Prince professional portfolio showcasing web development projects and skills" />
+        <meta name="description" content="Prince's professional portfolio showcasing web development projects and skills" />
         <meta name="keywords" content="web developer, portfolio, Prince, React, Next.js, JavaScript, Typescript, Tailwind CSS, Vercel, Github, Node, Express" />
         <meta name="author" content="Prince" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
