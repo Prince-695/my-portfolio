@@ -33,8 +33,8 @@ const Layout = ({children}) => {
         <Nav />
         <Header />
         {children}
+        <Analytics />
       </div>
-      <Analytics />
     </>
   );
 };
