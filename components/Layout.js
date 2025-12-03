@@ -34,6 +34,7 @@ const Layout = ({children}) => {
         <Header />
         {children}
       </div>
+      <Analytics />
     </>
   );
 };
