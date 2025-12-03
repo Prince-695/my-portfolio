@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "^13.4.4",
+    "@vercel/analytics": "^1.6.1",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "emailjs-com": "^3.2.0",
