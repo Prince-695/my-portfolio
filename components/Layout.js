@@ -1,7 +1,6 @@
 //fonts
 import { Sora } from '@next/font/google'
 import Head from 'next/head'
-import { Analytics } from "@vercel/analytics/next"
 
 //font settings
 const sora = Sora({
@@ -33,7 +32,6 @@ const Layout = ({children}) => {
         <Nav />
         <Header />
         {children}
-        <Analytics />
       </div>
     </>
   );
