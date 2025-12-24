@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return(
-    <>
+    <Layout>
       <AnimatePresence mode='wait'>
         <motion.div key={router.route} className='h-full' >
           <Transition />
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
         </motion.div>
       </AnimatePresence>
       <Analytics />
-    </>
+    </Layout>
   )
   
 }
