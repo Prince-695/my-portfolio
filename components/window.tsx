@@ -6,17 +6,13 @@ import { useState, useRef, useEffect } from "react"
 import { X, Minus, ArrowRightIcon as ArrowsMaximize } from "lucide-react"
 import type { AppWindow } from "@/types"
 import Notes from "@/components/apps/aboutMe"
-import GitHub from "@/components/apps/github"
 import Safari from "@/components/apps/browser"
 import VSCode from "@/components/apps/vscode"
 import FaceTime from "@/components/apps/facetime"
 import Terminal from "@/components/apps/terminal"
 import Mail from "@/components/apps/mail"
-import YouTube from "@/components/apps/youtube"
-import Spotify from "@/components/apps/spotify"
 import Snake from "@/components/apps/snake"
 import Weather from "@/components/apps/weather"
-import Settings from "@/components/apps/settings"
 import FlappyBird from "@/components/apps/flappybird"
 import Paint from "@/components/apps/paint"
 import Vibe from "@/components/apps/vibe"
@@ -25,17 +21,13 @@ import Resume from "@/components/apps/resume"
 
 const componentMap: Record<string, React.ComponentType<{ isDarkMode?: boolean }>> = {
   Notes,
-  GitHub,
   Safari,
   VSCode,
   FaceTime,
   Terminal,
   Mail,
-  YouTube,
-  Spotify,
   Snake,
   Weather,
-  Settings,
   FlappyBird,
   Paint,
   Vibe,
