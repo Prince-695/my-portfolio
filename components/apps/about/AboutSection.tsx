@@ -13,43 +13,8 @@ export default function AboutSection() {
       
       <p className="text-base leading-relaxed mb-6">
         I'm a BTech Computer Science (AI-ML) student at Adani University with a passion for building scalable, 
-        innovative web solutions. As the Co-founder & Lead Full Stack Developer at <strong>SPIFFY</strong>, I lead 
-        teams in delivering high-quality digital products while exploring cutting-edge AI integrations.
+        innovative web solutions. As the Co-founder & Lead Full Stack Developer at <strong>SPIFFY</strong>, I have lead and worked with diverse teams in delivering high-quality digital products while exploring cutting-edge AI integrations.
       </p>
-      
-      {/* <ul className="space-y-3 my-6">
-        <li className="flex items-start gap-2">
-          <span>🚀</span>
-          <span>Co-founder at <strong>SPIFFY</strong> - Building custom web solutions for clients</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span>💻</span>
-          <span>Frontend Tech Intern at <strong>TECHYEZ</strong> - Creating real-time learning visualizers</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span>🎓</span>
-          <span>Studying <strong>Computer Science & Technology (AI-ML)</strong> at Adani University</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span>🌱</span>
-          <span>Expert in <strong>MERN Stack, Next.js, TypeScript, AI Integration</strong></span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span>🏆</span>
-          <span>2nd Runner-up at TIC TECH TOE'24 | Top 40 at DotSlash 8.0</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span>📫 My</span>
-            <a 
-              href="https://princerathod.vercel.app/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-700 underline transition-colors duration-200"
-            >
-              Portfolio
-            </a>
-        </li>
-      </ul> */}
       
       <h2 className="text-2xl md:text-3xl font-semibold mt-8 mb-4 text-gray-800">
         What I Do
