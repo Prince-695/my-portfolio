@@ -16,7 +16,7 @@ import { HiDocumentText } from "react-icons/hi2"
 
 const spotlightApps = [
   { id: "aboutme", title: "About Me", icon: (<FaRegNoteSticky className="w-6 h-6 text-gray-700" />), component: "Notes" },
-  { id: "safari", title: "Browser", icon: (<FiChrome className="w-6 h-6 text-gray-700" />), component: "Browser" },
+  { id: "browser", title: "Browser", icon: (<FiChrome className="w-6 h-6 text-gray-700" />), component: "Safari" },
   { id: "terminal", title: "Terminal", icon: (<MdTerminal className="w-6 h-6 text-gray-700" />), component: "Terminal" },
   { id: "vscode", title: "VS Code", icon: (<TbBrandVscode className="w-6 h-6 text-gray-700" />), component: "VSCode" },
   { id: "facetime", title: "Camera", icon: (<FaCameraRetro className="w-6 h-6 text-gray-700" />), component: "FaceTime" },
