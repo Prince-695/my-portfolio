@@ -11,27 +11,27 @@ import { MdConnectWithoutContact } from "react-icons/md";
 const items = [
     {
         title: 'GitHub',
-        icon: <LucideGithub className='w-5 h-5 cursor-pointer' />,
+        icon: <LucideGithub className='w-5 h-5 ' />,
         href: 'https://github.com/Prince-695',
     },
     {
       title: 'LinkedIn',
-      icon: <Linkedin className='w-5 h-5 cursor-pointer' />,
+      icon: <Linkedin className='w-5 h-5 ' />,
       href: 'https://www.linkedin.com/in/prince-rathod-3a9b1b2b8/',
     },
     {
       title: 'Mail',
-      icon: <MdOutlineMail className='w-5 h-5 cursor-pointer' />,
+      icon: <MdOutlineMail className='w-5 h-5 ' />,
       href: 'mailto:rathodprince411@gmail.com'
     },
     {
       title: 'Instagram',
-      icon: <Instagram className='w-5 h-5 cursor-pointer' />,
+      icon: <Instagram className='w-5 h-5 ' />,
       href: 'https://www.instagram.com/prince_rathod695',
     },
     {
         title: 'Twitter',
-        icon: <Twitter className='w-5 h-5 cursor-pointer' />,
+        icon: <Twitter className='w-5 h-5 ' />,
         href: 'https://x.com/Prince_Rathod69',
     },
     
@@ -68,7 +68,7 @@ function IconContainer({
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="h-7 w-7 flex items-center justify-center text-gray-700 hover:scale-125 transition-transform cursor-pointer">
+        <div className="h-7 w-7 flex items-center justify-center text-gray-700 hover:scale-125 transition-transform ">
           {icon}
         </div>
       </div>

@@ -40,7 +40,7 @@ const FloatingDockMobile = ({
     <button
       onClick={launchpadItem.onClick}
       className={cn(
-        "md:hidden fixed left-5 bottom-5 w-14 h-14 rounded-full bg-white/60 backdrop-blur-md shadow-sm border border-gray-200 flex items-center justify-center cursor-pointer ",
+        "md:hidden fixed left-5 bottom-5 w-14 h-14 rounded-full bg-white/60 backdrop-blur-md shadow-sm border border-gray-200 flex items-center justify-center  ",
         className,
       )}
     >

@@ -141,7 +141,7 @@ export default function Spotlight({ onClose, onAppClick }: SpotlightProps) {
               {filteredApps.map((app, index) => (
                 <div
                   key={app.id}
-                  className={`flex items-center px-4 py-3 cursor-pointer ${
+                  className={`flex items-center px-4 py-3  ${
                     index === selectedIndex ? "bg-black/30" : ""
                   }`}
                   onClick={() => handleAppClick(app)}

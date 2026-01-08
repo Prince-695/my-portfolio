@@ -524,7 +524,7 @@ export default function Weather() {
               <div
                 key={cityCard.city}
                 onClick={() => handleCityCardClick(cityCard.city, cityCard.data)}
-                className={`${cardBg} p-4 rounded-lg border ${borderColor} cursor-pointer 
+                className={`${cardBg} p-4 rounded-lg border ${borderColor}  
                   hover:shadow-lg transition-shadow duration-200 
                   ${city === cityCard.city ? 'ring-2 ring-blue-500' : ''}`}
               >

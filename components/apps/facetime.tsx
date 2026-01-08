@@ -203,7 +203,7 @@ export default function FaceTime() {
                   <img
                     src={photo}
                     alt={`Captured photo ${index + 1}`}
-                    className="h-12 md:h-16 w-auto rounded cursor-pointer hover:ring-2 ring-blue-500 transition-all"
+                    className="h-12 md:h-16 w-auto rounded  hover:ring-2 ring-blue-500 transition-all"
                     onClick={() => handlePhotoClick(photo)}
                   />
                   {/* Download button - left side */}

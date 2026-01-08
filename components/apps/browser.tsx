@@ -153,7 +153,7 @@ export default function Safari() {
                   <div
                     key={project.id}
                     onClick={() => selectProject(project)}
-                    className="p-3 md:p-4 flex flex-row justify-between items-center hover:bg-neutral-50 rounded-xl cursor-pointer border border-gray-200 transition-colors"
+                    className="p-3 md:p-4 flex flex-row justify-between items-center hover:bg-neutral-50 rounded-xl  border border-gray-200 transition-colors"
                   >
                     <div className="flex gap-3 md:gap-4 flex-row flex-1 min-w-0">
                       <div className="flex-shrink-0">

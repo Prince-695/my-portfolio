@@ -93,7 +93,7 @@ export default function Notes() {
           {notes.map((note) => (
             <div
               key={note.id}
-              className={`p-3 cursor-pointer transition-colors duration-200 ${
+              className={`p-3  transition-colors duration-200 ${
                 selectedNoteId === note.id ? 'bg-gray-300' : 'hover:bg-gray-200'
               }`}
               onClick={() => handleNoteSelect(note.id)}
