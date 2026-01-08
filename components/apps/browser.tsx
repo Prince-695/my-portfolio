@@ -56,8 +56,8 @@ const projects = [
   {
     id: 6,
     title: "My old Portfolio",
-    url: "https://old-portfolio.vercel.app/",
-    githubUrl: "https://github.com/prince-695/old-portfolio",
+    url: "https://princerathod-portfolio-old.vercel.app",
+    githubUrl: "https://github.com/Prince-695/princerathod-portfolio-old",
     description: "Previous portfolio design",
     fullDescription: "My previous portfolio website showcasing earlier projects and design philosophy. Features smooth animations, project showcases, and contact information. Built with modern web technologies and creative design patterns.",
     tech: ["Next.js", "JavaScript", "Tailwind CSS", "Framer Motion"],
