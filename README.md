@@ -2,7 +2,7 @@
 
 Welcome to my OS-style portfolio repository! 🚀 This project is a unique digital experience that brings the familiarity of an operating system interface to showcase my skills, projects, and passion for modern web development.
 
-![Portfolio Preview](public/webpreview.png)
+![Portfolio Preview](public/web-preview.png)
 
 ---
 
