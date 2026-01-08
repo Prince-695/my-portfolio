@@ -9,7 +9,7 @@ interface MenubarProps {
 }
 
 const Menubar = ({ onSpotlightClick }: MenubarProps) => {
-  const [batteryLevel, setBatteryLevel] = useState()
+  const [batteryLevel, setBatteryLevel] = useState<number | undefined>(undefined)
   const [isCharging, setIsCharging] = useState(false)
   const [showWifiToggle, setShowWifiToggle] = useState(false)
   const [wifiEnabled, setWifiEnabled] = useState(true)

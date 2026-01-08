@@ -9,7 +9,7 @@ export default function MailApp() {
 
   // Open mailto link when the app is opened
   useEffect(() => {
-    const mailtoLink = "mailto:mail@danielprior.dk"
+    const mailtoLink = "mailto:mail@rathodprince411@gmail.com"
     window.location.href = mailtoLink
   }, [])
 

@@ -1,22 +1,25 @@
 "use client"
 
-// Inspired by react-hot-toast library
+// Simplified toast hook using sonner
 import * as React from "react"
+import { toast as sonnerToast } from "sonner"
 
-import type {
-  ToastActionElement,
-  ToastProps,
-} from '@/components/ui/toast'
-
-const TOAST_LIMIT = 1
-const TOAST_REMOVE_DELAY = 1000000
+type ToastProps = {
+  title?: React.ReactNode
+  description?: React.ReactNode
+  variant?: "default" | "destructive"
+}
 
 type ToasterToast = ToastProps & {
   id: string
-  title?: React.ReactNode
-  description?: React.ReactNode
-  action?: ToastActionElement
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
 }
+
+type ToastActionElement = React.ReactElement
+
+const TOAST_LIMIT = 1
+const TOAST_REMOVE_DELAY = 1000000
 
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
@@ -142,8 +145,17 @@ function dispatch(action: Action) {
 
 type Toast = Omit<ToasterToast, "id">
 
-function toast({ ...props }: Toast) {
+function toast({ title, description, ...props }: Toast) {
   const id = genId()
+
+  // Use sonner toast
+  if (title && description) {
+    sonnerToast(title as string, { description: description as string })
+  } else if (title) {
+    sonnerToast(title as string)
+  } else if (description) {
+    sonnerToast(description as string)
+  }
 
   const update = (props: ToasterToast) =>
     dispatch({
@@ -156,6 +168,8 @@ function toast({ ...props }: Toast) {
     type: "ADD_TOAST",
     toast: {
       ...props,
+      title,
+      description,
       id,
       open: true,
       onOpenChange: (open) => {
