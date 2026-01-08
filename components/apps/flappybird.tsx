@@ -13,11 +13,11 @@ export default function FlappyBird() {
   const CANVAS_HEIGHT = 700
   const BIRD_SIZE = 30
   const PIPE_WIDTH = 60
-  const PIPE_GAP = 160
-  const GRAVITY = 0.3
-  const JUMP_STRENGTH = -5
-  const MAX_FALL_SPEED = 5
-  const PIPE_SPEED = 3
+  const PIPE_GAP = 180
+  const GRAVITY = 0.2
+  const JUMP_STRENGTH = -4
+  const MAX_FALL_SPEED = 4
+  const PIPE_SPEED = 2
   const PIPE_SPACING = 280
 
   // Game state

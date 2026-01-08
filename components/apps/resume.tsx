@@ -31,21 +31,21 @@ export default function Resume() {
   }
 
   return (
-    <div className="h-full w-full flex flex-col ">
+    <div className="h-full w-full flex flex-col">
       {/* PDF Viewer */}
-      <div className="flex-1 overflow-auto bg-gray-800 p-1 scrollbar-hide">
-        <div className="flex justify-center">
+      <div className="flex-1 overflow-auto bg-gray-800 p-1 md:p-4 scrollbar-hide">
+        <div className="flex justify-center items-start min-h-full">
           <div
             style={{
               transform: `scale(${scale})`,
               transformOrigin: "top center",
               transition: "transform 0.2s ease-in-out",
             }}
-            className=" shadow-2xl"
+            className="shadow-2xl w-full max-w-[210mm] scrollbar-hide"
           >
             <iframe
-              src={`${resumePath}#toolars=0&navpanes=0&scrollbar=0`}
-              className="w-[210mm] h-[297mm] scrollbar-hide rounded-md"
+              src={`${resumePath}#toolbars=0&navpanes=0&scrollbar=0`}
+              className="w-full h-[calc(100vh-2rem)] md:h-[297mm] scrollbar-hide rounded-md"
               title="Prince Rathod's Resume"
             />
           </div>

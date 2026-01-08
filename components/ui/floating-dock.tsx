@@ -138,7 +138,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div onClick={onClick} className="cursor-pointer">
+    <div onClick={onClick} className="">
       <motion.div
         ref={ref}
         style={{ width, height }}

@@ -106,7 +106,7 @@ export default function Launchpad({ onAppClick, onClose }: LaunchpadProps) {
           {filteredApps.map((app) => (
             <div
               key={app.id}
-              className="flex flex-col items-center justify-center cursor-pointer group"
+              className="flex flex-col items-center justify-center group"
               onClick={() => handleAppClick(app)}
             >
               <div className="w-12 h-12 flex items-center justify-center mb-2 rounded-xl bg-white  p-2 group-hover:scale-110 transition-transform duration-200">

@@ -11,27 +11,27 @@ import { MdConnectWithoutContact } from "react-icons/md";
 const items = [
     {
         title: 'GitHub',
-        icon: <LucideGithub className='w-5 h-5' />,
+        icon: <LucideGithub className='w-5 h-5 cursor-pointer' />,
         href: 'https://github.com/Prince-695',
     },
     {
       title: 'LinkedIn',
-      icon: <Linkedin className='w-5 h-5' />,
+      icon: <Linkedin className='w-5 h-5 cursor-pointer' />,
       href: 'https://www.linkedin.com/in/prince-rathod-3a9b1b2b8/',
     },
     {
       title: 'Mail',
-      icon: <MdOutlineMail className='w-5 h-5' />,
+      icon: <MdOutlineMail className='w-5 h-5 cursor-pointer' />,
       href: 'mailto:rathodprince411@gmail.com'
     },
     {
       title: 'Instagram',
-      icon: <Instagram className='w-5 h-5' />,
+      icon: <Instagram className='w-5 h-5 cursor-pointer' />,
       href: 'https://www.instagram.com/prince_rathod695',
     },
     {
         title: 'Twitter',
-        icon: <Twitter className='w-5 h-5' />,
+        icon: <Twitter className='w-5 h-5 cursor-pointer' />,
         href: 'https://x.com/Prince_Rathod69',
     },
     
@@ -50,7 +50,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={href} className="cursor-pointer">
+    <Link href={href} target="_blank" >
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -68,7 +68,7 @@ function IconContainer({
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="h-7 w-7 flex items-center justify-center text-gray-700 hover:scale-125 transition-transform">
+        <div className="h-7 w-7 flex items-center justify-center text-gray-700 hover:scale-125 transition-transform cursor-pointer">
           {icon}
         </div>
       </div>
@@ -122,7 +122,7 @@ const Socials = () => {
                   <a
                     href={item.href}
                     key={item.title}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f9f9f9] hover:scale-110 hover:bg-gray-200 transition-transform"
+                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f9f9f9] hover:scale-110 hover:bg-gray-200 transition-transform "
                   >
                     <div className="h-10 w-10 flex items-center justify-center text-gray-700">{item.icon}</div>
                   </a>
