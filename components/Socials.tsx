@@ -12,12 +12,12 @@ const items = [
     {
         title: 'GitHub',
         icon: <LucideGithub className='w-5 h-5' />,
-        href: '#',
+        href: 'https://github.com/Prince-695',
     },
     {
       title: 'LinkedIn',
       icon: <Linkedin className='w-5 h-5' />,
-      href: '#',
+      href: 'https://www.linkedin.com/in/prince-rathod-3a9b1b2b8/',
     },
     {
       title: 'Mail',
@@ -25,14 +25,14 @@ const items = [
       href: 'mailto:rathodprince411@gmail.com'
     },
     {
-        title: 'Twitter',
-        icon: <Twitter className='w-5 h-5' />,
-        href: '#',
-    },
-    {
       title: 'Instagram',
       icon: <Instagram className='w-5 h-5' />,
-      href: '#',
+      href: 'https://www.instagram.com/prince_rathod695',
+    },
+    {
+        title: 'Twitter',
+        icon: <Twitter className='w-5 h-5' />,
+        href: 'https://x.com/Prince_Rathod69',
     },
     
 ]

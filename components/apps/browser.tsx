@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { ArrowLeft, ArrowRight, RefreshCw, Home, Star, ExternalLink, Github } from "lucide-react"
-import Image from "next/image"
 
 // Portfolio projects data
 const projects = [
@@ -10,85 +9,63 @@ const projects = [
     id: 1,
     title: "Uify AI",
     url: "https://uify-one.vercel.app",
-    githubUrl: "https://github.com/prince-695/ecommerce-platform",
-    description: "A full-stack e-commerce platform built with Next.js and TypeScript. Features include user authentication, product catalog, shopping cart, checkout process with Stripe integration, order management, and admin dashboard. The platform is fully responsive and optimized for performance with server-side rendering and static generation.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "MongoDB"],
-    image: "",
+    description: "AI-powered frontend generation platform",
+    fullDescription: "An AI-driven platform that transforms natural language prompts into fully responsive React and Next.js components. Leverages OpenAI for intelligent code synthesis and design recommendations, enabling instant visual prototyping. Features automated background tasks with Inngest, containerized code previews using Docker and E2B Sandbox, and a type-safe API layer built with tRPC. The backend utilizes NeonDB with Prisma ORM for efficient data handling and scalability.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "ShadcnUI", "OpenAI API", "Docker", "TRPC", "Clerk", "Prisma", "NeonDB", "Inngest", "Tanstack Query", "E2B Sandbox"],
+    image: "/browser/uify.png",
   },
   {
     id: 2,
     title: "Aspire AI",
     url: "https://aspire-ai-mauve.vercel.app",
-    githubUrl: "https://github.com/prince-695/task-manager",
-    description: "Real-time collaborative task management application with drag-and-drop functionality. Built with React and Firebase for real-time updates. Features include task boards, priority levels, due dates, team collaboration, and activity tracking. The interface is intuitive and designed for maximum productivity.",
-    tech: ["React", "Firebase", "Material-UI", "Redux", "Framer Motion"],
-    image: "",
+    githubUrl: "https://github.com/prince-695/aspire-ai",
+    description: "AI Career Coach & Study Planner",
+    fullDescription: "An intelligent career coaching platform that generates personalized study plans and skill roadmaps tailored to individual goals. Powered by Gemini API for conversational AI capabilities, offering topic explanations, summaries, and guided learning interactions. Features secure authentication via Clerk, automated roadmap generation through Inngest workflows, and efficient progress tracking with NeonDB and Prisma. Built with Next.js for optimal performance and smooth user experience.",
+    tech: ["Next.js", "JavaScript", "TailwindCSS", "ShadcnUI", "Gemini API", "NeonDB", "Prisma", "Inngest", "Clerk"],
+    image: "/browser/aspire.png",
   },
   {
     id: 3,
     title: "Xenith - Zentry.com clone",
     url: "https://zentry-xenith.vercel.app",
-    description: "Personal portfolio showcasing projects and skills with a macOS-inspired design. Built with Next.js and Framer Motion for smooth animations. Features include interactive UI, project showcase, contact form, and responsive design that works seamlessly across all devices.",
-    tech: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
-    image: "",
+    githubUrl: "https://github.com/prince-695/xenith",
+    description: "Visually rich animated frontend clone",
+    fullDescription: "A stunning frontend recreation of Zentry.com showcasing advanced UI animations and smooth transitions. Features pixel-perfect layouts with scroll-triggered parallax effects and motion animations using GSAP and Framer Motion. Built with React and TailwindCSS for responsive design across all devices. Demonstrates mastery of modern animation practices and frontend craftsmanship with immersive visual storytelling.",
+    tech: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "GSAP"],
+    image: "/browser/xenith.png",
   },
   {
     id: 4,
     title: "Storix - Drive clone",
-    url: "https://example-social.vercel.app",
-    githubUrl: "https://github.com/prince-695/social-dashboard",
-    description: "Comprehensive analytics dashboard for social media metrics and insights. Visualizes data from multiple platforms with beautiful charts and graphs. Includes real-time updates, custom date ranges, export functionality, and detailed reports. Built with modern web technologies for optimal performance.",
-    tech: ["React", "Chart.js", "Node.js", "Express", "PostgreSQL"],
-    image: "",
+    githubUrl: "https://github.com/prince-695/storix",
+    description: "Cloud storage solution inspired by Google Drive",
+    fullDescription: "A full-featured cloud storage web application with secure file uploads, folder creation, and hierarchical organization. Built with Next.js and TypeScript, utilizing Appwrite for authentication, file storage, and database management. Features a modern, accessible interface designed with Shadcn UI and TailwindCSS, offering smooth animations and polished user experience. Implements scalable session management, metadata tracking, and data consistency through Appwrite APIs.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Appwrite", "ShadcnUI"],
+    image: "/browser/storix.png",
   },
   {
     id: 5,
     title: "Wordly - Modern Blogging Platform",
     url: "https://wordly-iota.vercel.app/",
-    githubUrl: "https://github.com/prince-695/social-dashboard",
-    description: "Comprehensive analytics dashboard for social media metrics and insights. Visualizes data from multiple platforms with beautiful charts and graphs. Includes real-time updates, custom date ranges, export functionality, and detailed reports. Built with modern web technologies for optimal performance.",
-    tech: ["React", "Chart.js", "Node.js", "Express", "PostgreSQL"],
-    image: "",
+    githubUrl: "https://github.com/prince-695/wordly",
+    description: "A blogging platform for everyone.",
+    fullDescription: "A modern blogging platform with rich text editor, markdown support, and social features. Includes user authentication, comment system, tags, categories, and search functionality. Built for content creators who want a clean and powerful blogging experience.",
+    tech: ["Next.js", "TailwindCSS", "Typescript", "ShadcnUI", "TRPC", "NextAuth", "Markdown", "Drizle", "NeonDB", "Tanstack Query"],
+    image: "/browser/wordly.png",
   },
-    {
+  {
     id: 6,
     title: "My old Portfolio",
-    url: "https://wordly-iota.vercel.app/",
-    githubUrl: "https://github.com/prince-695/social-dashboard",
-    description: "Comprehensive analytics dashboard for social media metrics and insights. Visualizes data from multiple platforms with beautiful charts and graphs. Includes real-time updates, custom date ranges, export functionality, and detailed reports. Built with modern web technologies for optimal performance.",
-    tech: ["React", "Chart.js", "Node.js", "Express", "PostgreSQL"],
-    image: "/chatgpt.png",
+    url: "https://old-portfolio.vercel.app/",
+    githubUrl: "https://github.com/prince-695/old-portfolio",
+    description: "Previous portfolio design",
+    fullDescription: "My previous portfolio website showcasing earlier projects and design philosophy. Features smooth animations, project showcases, and contact information. Built with modern web technologies and creative design patterns.",
+    tech: ["Next.js", "JavaScript", "Tailwind CSS", "Framer Motion"],
+    image: "/browser/old-portfolio.png",
   },
 ]
 
-const TrendingSites =  [
-  {
-    id: 1,
-    title: "Example Site 1",
-    url: "https://example1.com",
-    image: "/example1.png",
-  },
-  {
-    id: 2,
-    title: "Example Site 2",
-    url: "https://example2.com",
-    image: "/example2.png",
-  },
-  {
-    id: 3,
-    title: "Example Site 3",
-    url: "https://example3.com",
-    image: "/example3.png",
-  },
-  {
-    id: 4,
-    title: "Example Site 4",
-    url: "https://example4.com",
-    image: "/example4.png",
-  },
-]
-
-type ViewType = 'home' | 'details' | 'live'
+type ViewType = 'home' | 'details'
 
 export default function Safari() {
   const [view, setView] = useState<ViewType>('home')
@@ -103,9 +80,7 @@ export default function Safari() {
   }
 
   const goBack = () => {
-    if (view === 'live') {
-      setView('details')
-    } else if (view === 'details') {
+    if (view === 'details') {
       setView('home')
       setSelectedProject(null)
     }
@@ -116,27 +91,14 @@ export default function Safari() {
     setSelectedProject(null)
   }
 
-  const openInNewTab = () => {
-    if (selectedProject) {
-      window.open(selectedProject.url, '_blank', 'noopener,noreferrer')
-    }
-  }
-
   const selectProject = (project: typeof projects[0]) => {
     setSelectedProject(project)
     setView('details')
   }
 
-  const viewLiveProject = () => {
-    if (selectedProject) {
-      window.open(selectedProject.url, '_blank', 'noopener,noreferrer')
-    }
-  }
-
   const getCurrentUrl = () => {
     if (view === 'home') return 'prince://projects'
     if (view === 'details' && selectedProject) return `prince://projects/${selectedProject.id}`
-    if (view === 'live' && selectedProject) return selectedProject.url
     return 'prince://projects'
   }
 
@@ -175,58 +137,44 @@ export default function Safari() {
         <button className="p-1 rounded hover:bg-gray-200">
           <Star className="w-4 h-4" />
         </button>
-        
-        {/* External link button - only show when viewing details or live */}
-        {(view === 'details' || view === 'live') && (
-          <button 
-            className="p-1 rounded hover:bg-gray-200 text-blue-600"
-            onClick={openInNewTab}
-            title="Open in new tab"
-          >
-            <ExternalLink className="w-4 h-4" />
-          </button>
-        )}
       </div>
 
       {/* Content */}
       <div className="flex-1 overflow-auto bg-white scrollbar-hide">
-        {/* HOME VIEW - Project Grid */}
+        {/* HOME VIEW - Project List */}
         {view === 'home' && (
-          <div className="p-8">
-            <div className="max-w-6xl mx-auto">
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">My Projects</h1>
-              <p className="text-gray-600 mb-8">Explore my portfolio of web applications and projects</p>
+          <div className="p-4 md:p-8">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">My Projects</h1>
+              <p className="text-gray-600 mb-6 md:mb-8">Explore my portfolio of web applications and projects</p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="space-y-3 md:space-y-4">
                 {projects.map((project) => (
                   <div
                     key={project.id}
                     onClick={() => selectProject(project)}
-                    className="bg-white border-2 border-gray-200 rounded-xl p-6 cursor-pointer hover:border-blue-500 hover:shadow-lg transition-all"
+                    className="p-3 md:p-4 flex flex-row justify-between items-center hover:bg-neutral-50 rounded-xl cursor-pointer border border-gray-200 transition-colors"
                   >
-                    <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg flex items-center justify-center mb-4">
-                      {/* <span className="text-6xl">{project.image}</span> */}
-                      <Image src={project.image} alt={project.title} width={400} height={225} className="max-w-full max-h-full object-contain rounded-lg" />
+                    <div className="flex gap-3 md:gap-4 flex-row flex-1 min-w-0">
+                      <div className="flex-shrink-0">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="h-14 w-14 rounded-lg object-cover object-top"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0 text-left">
+                        <h3 className="font-medium text-neutral-800 text-sm md:text-base truncate">
+                          {project.title}
+                        </h3>
+                        <p className="text-neutral-600 text-xs md:text-sm mt-1 line-clamp-1 md:line-clamp-2">
+                          {project.description}
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
-                    <p className="text-sm text-gray-600 line-clamp-2 mb-3">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.slice(0, 3).map((tech, index) => (
-                        <span
-                          key={index}
-                          className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.tech.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-medium">
-                          +{project.tech.length - 3} more
-                        </span>
-                      )}
-                    </div>
+                    <button className="flex-shrink-0 ml-3 px-3 md:px-4 py-2 text-xs md:text-sm rounded-full font-bold bg-blue-600 hover:bg-blue-700 text-white transition-colors whitespace-nowrap">
+                      View Details
+                    </button>
                   </div>
                 ))}
               </div>
@@ -236,33 +184,34 @@ export default function Safari() {
 
         {/* DETAILS VIEW - Project Info */}
         {view === 'details' && selectedProject && (
-          <div className="p-8">
+          <div className="p-4 md:p-8">
             <div className="max-w-4xl mx-auto">
-              <div className="mb-8">
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">{selectedProject.title}</h1>
+              <div className="mb-6 md:mb-8">
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{selectedProject.title}</h1>
                 
                 {/* Project preview */}
-                <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl flex items-center justify-center mb-6 border-2 border-gray-200">
-                  <div className="text-center">
-                    <Image src={selectedProject.image} alt={selectedProject.title} width={800} height={400} className="max-w-full max-h-full object-contain rounded-lg" />
-                    {/* <p className="text-gray-500 font-medium">{selectedProject.title}</p> */}
-                  </div>
+                <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl flex items-center justify-center mb-4 md:mb-6 border-2 border-gray-200 overflow-hidden">
+                  <img 
+                    src={selectedProject.image} 
+                    alt={selectedProject.title} 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* About */}
-                <div className="mb-6">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-3">About This Project</h2>
-                  <p className="text-gray-700 leading-relaxed">{selectedProject.description}</p>
+                <div className="mb-4 md:mb-6">
+                  <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">About This Project</h2>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">{selectedProject.fullDescription}</p>
                 </div>
 
                 {/* Tech Stack */}
-                <div className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-3">Tech Stack</h2>
+                <div className="mb-6 md:mb-8">
+                  <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">Tech Stack</h2>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.tech.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium"
+                        className="px-3 py-1.5 md:px-4 md:py-2 bg-blue-100 text-blue-700 rounded-lg text-xs md:text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -271,22 +220,24 @@ export default function Safari() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <button
-                    onClick={viewLiveProject}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    View Live Project
-                  </button>
+                <div className="flex flex-col md:flex-row gap-3 md:gap-4">
+                  {selectedProject.url && (
+                    <button
+                      onClick={() => window.open(selectedProject.url, '_blank', 'noopener,noreferrer')}
+                      className="w-full md:flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      Visit Site
+                    </button>
+                  )}
                   
                   {selectedProject.githubUrl && (
                     <button
                       onClick={() => window.open(selectedProject.githubUrl, '_blank', 'noopener,noreferrer')}
-                      className="flex-1 bg-gray-800 hover:bg-gray-900 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                      className="w-full md:flex-1 bg-gray-800 hover:bg-gray-900 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors"
                     >
                       <Github className="w-5 h-5" />
-                      View GitHub Repository
+                      GitHub
                     </button>
                   )}
                 </div>
