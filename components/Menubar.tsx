@@ -99,8 +99,8 @@ const Menubar = ({ onSpotlightClick }: MenubarProps) => {
         <div className="flex items-center space-x-3 text-xs">
           <span className="mr-1">{batteryLevel}%</span>
           <div className="relative">
-            <div className="w-7 h-4 relative">
-              <div className={`absolute top-0 left-0 bottom-0 rounded ${isCharging ? "bg-green-500" : "bg-gray-500"}`} style={{ width: `${batteryLevel}%` }}></div>
+            <div className="w-7 h-4 relative border-2 border-gray-500 rounded flex items-center justify-end pr-0.5">
+              <div className={`absolute top-0 left-0 bottom-0 ${isCharging ? "bg-green-500" : "bg-gray-500"}`} style={{ width: `${batteryLevel}%` }}></div>
               {isCharging && <div className="absolute inset-0 flex items-center justify-center text-xs">⚡</div>}
             </div>
           </div>
