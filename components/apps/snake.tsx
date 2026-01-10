@@ -15,7 +15,7 @@ export default function Snake() {
   const CANVAS_HEIGHT = 500
   const GRID_SIZE = 20
   const CELL_SIZE = CANVAS_WIDTH / GRID_SIZE
-  const GAME_SPEED = 100
+  const GAME_SPEED = 130
   const INITIAL_SNAKE = [
     { x: 10, y: 10 },
     { x: 10, y: 11 },
