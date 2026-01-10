@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Analytics } from '@verxcel/analytics/next';
+import { Analytics } from '@vercel/analytics/next';
 import { Geist, Geist_Mono, Georama, Orbitron } from "next/font/google";
 
 const OrbitronFont = Orbitron({
