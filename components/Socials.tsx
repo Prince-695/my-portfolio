@@ -82,6 +82,7 @@ const Socials = () => {
 
   return (
     <div className="relative block">
+      
       {/* Desktop view - always visible vertically with hover effects */}
       <div className="hidden md:flex flex-col gap-3 p-1 backdrop-blur-md shadow-md rounded-full top-1/2 right-5 transform -translate-y-1/2 fixed">
         {items.map((item) => (
@@ -95,7 +96,8 @@ const Socials = () => {
       </div>
 
       {/* Mobile view - collapsible */}
-      <div className="md:hidden shadow-sm rounded-full p-2 backdrop-blur-md bottom-5 right-5 fixed">
+      
+      <div className="md:hidden shadow-gray-700 shadow-md rounded-full p-2 backdrop-blur-md bottom-5 right-5 fixed bg-gray-700">
         <AnimatePresence>
           {open && (
             <motion.div
@@ -135,7 +137,7 @@ const Socials = () => {
           onClick={() => setOpen(!open)}
           className="flex h-10 w-10 items-center justify-center rounded-full backdrop-blur-md hover:scale-110 transition-transform"
         >
-          <MdConnectWithoutContact className="h-8 w-8 text-gray-700" />
+          <MdConnectWithoutContact className="h-8 w-8 text-[#f9f9f9]" />
         </button>
       </div>
     </div>

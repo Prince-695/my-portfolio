@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
-import { Play, RotateCcw, Pause } from "lucide-react"
+import { Play, RotateCcw, Pause, ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 // Define types for game elements
 type Direction = "UP" | "DOWN" | "LEFT" | "RIGHT"
@@ -31,6 +32,28 @@ export default function Snake() {
   const [highScore, setHighScore] = useState(0)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const gameLoopRef = useRef<number | null>(null)
+  const isMobile = useIsMobile()
+
+  // Handle direction change
+  const handleDirectionChange = (newDirection: Direction) => {
+    if (gameOver) return
+    
+    switch (newDirection) {
+      case "UP":
+        if (direction !== "DOWN") setDirection("UP")
+        break
+      case "DOWN":
+        if (direction !== "UP") setDirection("DOWN")
+        break
+      case "LEFT":
+        if (direction !== "RIGHT") setDirection("LEFT")
+        break
+      case "RIGHT":
+        if (direction !== "LEFT") setDirection("RIGHT")
+        break
+    }
+  }
+
   // Generate random food position
   const generateFood = useCallback((): Position => {
     const newFood = {
@@ -273,16 +296,16 @@ export default function Snake() {
 
       switch (e.key) {
         case "ArrowUp":
-          if (direction !== "DOWN") setDirection("UP")
+          handleDirectionChange("UP")
           break
         case "ArrowDown":
-          if (direction !== "UP") setDirection("DOWN")
+          handleDirectionChange("DOWN")
           break
         case "ArrowLeft":
-          if (direction !== "RIGHT") setDirection("LEFT")
+          handleDirectionChange("LEFT")
           break
         case "ArrowRight":
-          if (direction !== "LEFT") setDirection("RIGHT")
+          handleDirectionChange("RIGHT")
           break
         case " ": // Space bar to pause/resume
           setIsPaused((prev) => !prev)
@@ -377,7 +400,7 @@ export default function Snake() {
       </div>
 
       {/* Game canvas */}
-      <div className="relative shadow-2xl rounded-lg overflow-hidden max-w-full">
+      <div className="relative shadow-2xl sm:rounded-lg overflow-hidden max-w-full">
         <canvas
           ref={canvasRef}
           width={CANVAS_WIDTH}
@@ -388,8 +411,55 @@ export default function Snake() {
 
       {/* Instructions - compact */}
       <div className="mt-1 sm:mt-2 text-center text-[10px] sm:text-xs text-gray-300 max-w-[500px] px-2">
-        <p>Use arrow keys to move • Space to pause/resume</p>
+        <p>{isMobile ? "Use the arrow buttons below to move" : "Use arrow keys to move • Space to pause/resume"}</p>
       </div>
+
+      {/* Mobile Controls */}
+      {isMobile && (
+        <div className="mt-3 flex flex-col items-center gap-2">
+          {/* Up button */}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleDirectionChange("UP")}
+            disabled={gameOver || isPaused}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-700 w-12 h-12 p-0"
+          >
+            <ArrowUp className="w-6 h-6" />
+          </Button>
+          
+          {/* Left, Down, Right buttons */}
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleDirectionChange("LEFT")}
+              disabled={gameOver || isPaused}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-700 w-12 h-12 p-0"
+            >
+              <ArrowLeft className="w-6 h-6" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleDirectionChange("DOWN")}
+              disabled={gameOver || isPaused}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-700 w-12 h-12 p-0"
+            >
+              <ArrowDown className="w-6 h-6" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleDirectionChange("RIGHT")}
+              disabled={gameOver || isPaused}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-700 w-12 h-12 p-0"
+            >
+              <ArrowRight className="w-6 h-6" />
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

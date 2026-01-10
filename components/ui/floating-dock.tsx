@@ -40,11 +40,11 @@ const FloatingDockMobile = ({
     <button
       onClick={launchpadItem.onClick}
       className={cn(
-        "md:hidden fixed left-5 bottom-5 w-14 h-14 rounded-full bg-white/60 backdrop-blur-md shadow-sm border border-gray-200 flex items-center justify-center  ",
+        "md:hidden fixed left-5 bottom-5 w-14 h-14 rounded-full bg-gray-700 backdrop-blur-md shadow-md shadow-gray-700 flex items-center justify-center ",
         className,
       )}
     >
-      <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform">
+      <div className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform text-[#f9f9f9] ">
         {launchpadItem.icon}
       </div>
     </button>
@@ -144,7 +144,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-white/80"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-[#f9f9f9] hover:shadow-lg shadow-gray-300 transition-shadow"
       >
         <AnimatePresence>
           {hovered && (

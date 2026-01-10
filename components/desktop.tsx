@@ -143,7 +143,7 @@ export default function Desktop() {
       </div>
 
       {/* Socials */}
-      <div className=' '>
+      <div className=''>
         <Socials />
       </div>
     </div>
