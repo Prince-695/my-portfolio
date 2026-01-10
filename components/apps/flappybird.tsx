@@ -404,7 +404,7 @@ export default function FlappyBird() {
           width={CANVAS_WIDTH}
           height={CANVAS_HEIGHT}
           onClick={jump}
-          className=" max-w-full h-auto"
+          className=" max-w-full h-full"
         />
       </div>
     </div>
