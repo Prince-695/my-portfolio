@@ -24,27 +24,21 @@ export default function Page() {
     return () => window.removeEventListener('resize', checkDevice)
   }, [systemState])
 
-  // Simulate boot sequence
-  useEffect(() => {
-    if (systemState === "booting") {
-      const timer = setTimeout(() => {
-        setSystemState("desktop")
-      }, 3000) // 3 seconds boot sequence
-
-      return () => clearTimeout(timer)
-    }
-  }, [systemState])
+  // Handle boot completion
+  const handleBootComplete = () => {
+    setSystemState("desktop")
+  }
 
   const renderScreen = () => {
     switch (systemState) {
       case "booting":
-        return <BootScreen />
+        return <BootScreen onLoadComplete={handleBootComplete} />
 
       case "desktop":
         return <Desktop />
 
       default:
-        return <BootScreen />
+        return <BootScreen onLoadComplete={handleBootComplete} />
     }
   }
 
