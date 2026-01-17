@@ -105,7 +105,7 @@ export default function Spotlight({ onClose, onAppClick }: SpotlightProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-transparent z-40 flex items-center justify-center pointer-events-none">
+    <div className="fixed inset-0 bg-transparent z-40 flex items-center justify-center pointer-events-none px-3">
       <div
         ref={spotlightRef}
         className="w-full max-w-2xl backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl pointer-events-auto"
