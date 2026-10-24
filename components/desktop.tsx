@@ -12,6 +12,7 @@ import Dock from "./Dock"
 import { Boxes } from "./ui/background-boxes"
 import MainText from "./MainText"
 import Socials from "./Socials"
+import { initGlobalTouchSound } from "@/lib/sound-feedback"
 
 export default function Desktop() {
   const [openWindows, setOpenWindows] = useState<AppWindow[]>([])
@@ -20,6 +21,12 @@ export default function Desktop() {
   const [showSpotlight, setShowSpotlight] = useState(false)
   const [hasMaximizedWindow, setHasMaximizedWindow] = useState(false)
   const desktopRef = useRef<HTMLDivElement>(null)
+
+  // Initialize global tactile touch & click sound
+  useEffect(() => {
+    const cleanup = initGlobalTouchSound()
+    return cleanup
+  }, [])
 
   const toggleSpotlight = () => {
     setShowSpotlight(!showSpotlight)
@@ -90,7 +97,9 @@ export default function Desktop() {
 
   return (
     <div className="h-screen relative w-full bg-[#f9f9f9] overflow-hidden flex flex-col items-center justify-center">
-      <Menubar onSpotlightClick={toggleSpotlight} />
+      <Menubar 
+        onSpotlightClick={toggleSpotlight} 
+      />
       <div className="absolute inset-0 w-full h-full pointer-events-none" />
       <Boxes />
       
