@@ -15,7 +15,6 @@ import Snake from "@/components/apps/snake"
 import Weather from "@/components/apps/weather"
 import FlappyBird from "@/components/apps/flappybird"
 import Paint from "@/components/apps/paint"
-import Vibe from "@/components/apps/vibe"
 import Resume from "@/components/apps/resume"
 
 
@@ -30,7 +29,6 @@ const componentMap: Record<string, React.ComponentType<{ isDarkMode?: boolean }>
   Weather,
   FlappyBird,
   Paint,
-  Vibe,
   Resume,
 }
 

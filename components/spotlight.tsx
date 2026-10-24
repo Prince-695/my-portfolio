@@ -25,7 +25,6 @@ const spotlightApps = [
   { id: "flappybird", title: "Flappy Bird", icon: (<LuBird className="w-6 h-6 text-gray-700" />), component: "FlappyBird" },
   { id: "paint", title: "Paint", icon: (<HiPaintBrush className="w-6 h-6 text-gray-700" />), component: "Paint" },
   { id: "weather", title: "Weather", icon: (<WiDayHail className="w-6 h-6 text-gray-700" />), component: "Weather" },
-  { id: "vibe", title: "Vibe", icon: (<BsStars className="w-6 h-6 text-red-600" />), component: "Vibe" },
   
   // Commented out extra apps - uncomment if needed in the future
   // { id: "mail", title: "Mail", icon: (<FaRegEnvelope className="w-6 h-6 text-gray-700" />), component: "Mail" },

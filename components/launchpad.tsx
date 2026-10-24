@@ -26,7 +26,6 @@ const launchpadApps = [
   { id: "flappybird", title: "Flappy Bird", icon: (<LuBird className="w-12 h-12 text-gray-700" />), component: "FlappyBird" },
   { id: "paint", title: "Paint", icon: (<HiPaintBrush className="w-12 h-12 text-gray-700" />), component: "Paint" },
   { id: "weather", title: "Weather", icon: (<WiDayHail className="w-12 h-12 text-gray-700" />), component: "Weather" },
-  { id: "vibe", title: "Vibe", icon: (<BsStars className="w-12 h-12 text-red-600" />), component: "Vibe" }
 ]
 
 interface LaunchpadProps {
