@@ -1,8 +1,8 @@
 "use client"
 
-import type React from "react"
-
-import { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect } from "react"
+import { profileData, skillsData, projectsData, experienceData } from "@/data"
+import { feedback } from "@/lib/sound-feedback"
 
 export default function Terminal() {
   const [input, setInput] = useState("")
@@ -29,7 +29,7 @@ export default function Terminal() {
       // Initial welcome message
       setHistory([
         "Last login: " + new Date().toLocaleString(),
-        "Welcome to Terminal",
+        `Welcome to ${profileData.name}'s Terminal`,
         "Type 'help' to see available commands",
         "",
       ])
@@ -55,15 +55,18 @@ export default function Terminal() {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && input.trim()) {
+      feedback("click", 6)
       executeCommand(input)
       setCommandHistory((prev) => [...prev, input])
       setHistoryIndex(-1)
       setInput("")
     } else if (e.key === "ArrowUp") {
       e.preventDefault()
+      feedback("subtle", 3)
       navigateHistory(-1)
     } else if (e.key === "ArrowDown") {
       e.preventDefault()
+      feedback("subtle", 3)
       navigateHistory(1)
     }
   }
@@ -96,15 +99,16 @@ export default function Terminal() {
         setHistory((prev) => [
           ...prev,
           "Available commands:",
-          "  help - Show this help message",
-          "  clear - Clear the terminal",
-          "  echo [text] - Print text",
-          "  date - Show current date and time",
-          "  ls - List files",
-          "  whoami - Show current user",
-          "  about - About me",
-          "  skills - My technical skills",
-          "  contact - Contact information",
+          "  help        - Show this help message",
+          "  clear       - Clear the terminal",
+          "  whoami      - Show current user and role",
+          "  about       - About Prince Rathod",
+          "  skills      - Technical skills breakdown",
+          "  projects    - List all production projects",
+          "  experience  - Professional engineering history",
+          "  contact     - Contact and social channels",
+          "  date        - Show current date and time",
+          "  ls          - List sections",
           "",
         ])
         break
@@ -123,83 +127,66 @@ export default function Terminal() {
         break
 
       case "ls":
-        setHistory((prev) => [...prev, "About me", "Projects", "Experience", "Services", "Qualifications", "Contact", ""])
+        setHistory((prev) => [...prev, "About", "Projects", "Experience", "Skills", "Education", "Achievements", "Resume", "Contact", ""])
         break
 
       case "whoami":
-        setHistory((prev) => [...prev, "Prince Rathod", ""])
+        setHistory((prev) => [...prev, `${profileData.name} — ${profileData.title}`, ""])
         break
 
       case "about":
         setHistory((prev) => [
           ...prev,
           "",
-          { text: "ABOUT ME", isHeading: true },
+          { text: "ABOUT PRINCE RATHOD", isHeading: true },
           "",
-          "• I'm a passionate Full Stack developer with expertise",
-          "  in creating beautiful, responsive, and user-friendly",
-          "  applications. I love working with modern",
-          "  frameworks and technologies to build",
-          "  seamless user experiences. I have a strong",
-          "  background in both frontend and backend",
-          "  development, and I'm always eager to learn",
-          "  new skills and improve my craft.",
-          "• Currently, I'm exploring the exciting world",
-          "  of Artificial Intelligence and Machine Learning,",
-          "  integrating AI/ML solutions into web applications",
-          "  to create smarter and more intuitive user experiences.",
+          profileData.bio,
+          "",
+          "Key Focus Areas:",
+          ...profileData.approach.map((a) => `• ${a}`),
           "",
         ])
         break
 
-        case "skills":
-          setHistory((prev) => [
-            ...prev,
+      case "skills":
+        setHistory((prev) => [
+          ...prev,
+          "",
+          { text: "SKILLS & EXPERTISE", isHeading: true },
+          "",
+          ...skillsData.flatMap((cat) => [
+            `----- ${cat.category} -----`,
+            ...cat.skills.map((s) => `• ${s.name}`),
             "",
-            { text: "SKILLS & EXPERTISE", isHeading: true },
-            "",
-            "-----Frontend-----",
-            "• React / Next.js",
-            "• TypeScript / JavaScript",
-            "• Tailwind CSS / SCSS",
-            "• UI/UX Design",
-            "• Responsive Web Development",
-            "• Vite / Webpack",
-            "• Figma, Sketch etc.",
-            "",
+          ]),
+        ])
+        break
 
-            "-----Backend-----",
-            "• Node.js / Express",
-            "• TRPC / REST APIs",
-            "• Python / Flask",
-            "• Prisma ORM / Drizzle ORM",
-            "• SQL (MySQL, PostgreSQL)",
-            "• NoSQL (MongoDB)",
-            "• Clerk / BetterAuth",
-            "• JWT / OAuth",
-            "• Inngest Agent Kit",
-            "",
+      case "projects":
+        setHistory((prev) => [
+          ...prev,
+          "",
+          { text: "PROJECTS", isHeading: true },
+          "",
+          ...projectsData.map((p) => `• ${p.title} (${p.category}) — ${p.description}`),
+          "",
+        ])
+        break
 
-            "-----AI/ML-----",
-            "• Python",
-            "• Scikit-learn / Pandas / NumPy",
-            "• Mathplotlib / Seaborn",
-            "• OpenAI API / Gemini API",
-            "• Machine Learning Concepts",
-            "• Data Preprocessing & Analysis",
-            "• Model Training & Evaluation",
+      case "experience":
+        setHistory((prev) => [
+          ...prev,
+          "",
+          { text: "EXPERIENCE", isHeading: true },
+          "",
+          ...experienceData.flatMap((exp) => [
+            `• ${exp.role} @ ${exp.company} (${exp.period})`,
+            `  ${exp.description}`,
+            ...exp.highlights.slice(0, 2).map((h) => `    - ${h}`),
             "",
-
-            "-----DevOps & Tools-----",
-            "• Git / GitHub",
-            "• CI/CD Pipelines",
-            "• Windows / Linux",
-            "• Vercel / Netlify / Render",
-            "• Docker / Containerization",
-            "• AWS / Cloud Services",
-            "",
-          ])
-          break
+          ]),
+        ])
+        break
 
       case "contact":
         setHistory((prev) => [
@@ -207,10 +194,10 @@ export default function Terminal() {
           "",
           { text: "CONTACT INFORMATION", isHeading: true },
           "",
-          "Email: rathodprince411@gmail.com",
-          "GitHub: github.com/prince-695",
-          "LinkedIn: linkedin.com/in/prince-rathod-3a9b1b2b8/",
-          "Website: princerathod.me",
+          `Email:    ${profileData.contact.email}`,
+          `GitHub:   ${profileData.contact.github}`,
+          `LinkedIn: ${profileData.contact.linkedin}`,
+          `Twitter:  ${profileData.contact.twitter}`,
           "",
         ])
         break

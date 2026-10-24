@@ -17,7 +17,7 @@ import { HiDocumentText } from "react-icons/hi2";
 // Same apps as dock, except launchpad itself
 const launchpadApps = [
   { id: "aboutme", title: "About Me", icon: (<FaRegNoteSticky className="w-12 h-12 text-gray-700" />), component: "Notes" },
-  { id: "safari", title: "Safari", icon: (<FiChrome  className="w-12 h-12 text-gray-700" />), component: "Safari" },
+  { id: "browser", title: "Browser", icon: (<FiChrome className="w-12 h-12 text-gray-700" />), component: "Safari" },
   { id: "terminal", title: "Terminal", icon: (<MdTerminal className="w-12 h-12 text-gray-700" />), component: "Terminal" },
   { id: "vscode", title: "VS Code", icon: (<TbBrandVscode className="w-12 h-12 text-gray-700" />), component: "VSCode" },
   { id: "facetime", title: "Camera", icon: (<FaCameraRetro className="w-12 h-12 text-gray-700" />), component: "FaceTime" },
@@ -26,7 +26,6 @@ const launchpadApps = [
   { id: "flappybird", title: "Flappy Bird", icon: (<LuBird className="w-12 h-12 text-gray-700" />), component: "FlappyBird" },
   { id: "paint", title: "Paint", icon: (<HiPaintBrush className="w-12 h-12 text-gray-700" />), component: "Paint" },
   { id: "weather", title: "Weather", icon: (<WiDayHail className="w-12 h-12 text-gray-700" />), component: "Weather" },
-  { id: "vibe", title: "Vibe", icon: (<BsStars className="w-12 h-12 text-red-600" />), component: "Vibe" }
 ]
 
 interface LaunchpadProps {

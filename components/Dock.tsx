@@ -3,7 +3,7 @@
 import { FloatingDock } from "@/components/ui/floating-dock";
 import type { AppWindow } from "@/types";
 import { IoMenu } from "react-icons/io5";
-import { FaRegNoteSticky  } from "react-icons/fa6";
+import { FaRegNoteSticky } from "react-icons/fa6";
 import { TbBrandVscode } from "react-icons/tb";
 import { MdTerminal } from "react-icons/md";
 import { FiChrome } from "react-icons/fi";
@@ -19,8 +19,8 @@ interface DockProps {
 
 const dockApps = [
   { id: "launchpad", title: "Launchpad", icon: (<IoMenu className="w-7 h-7 md:text-gray-700 " />), component: "Launchpad", isSystem: true },
-  { id: "aboutme", title: "About me", icon: (<FaRegNoteSticky  className="w-5 h-5 text-gray-700" />), component: "Notes" },
-  { id: "safari", title: "Browser", icon: (<FiChrome className="w-7 h-7 text-gray-700" />), component: "Safari" },
+  { id: "aboutme", title: "About me", icon: (<FaRegNoteSticky className="w-5 h-5 text-gray-700" />), component: "Notes" },
+  { id: "browser", title: "Browser", icon: (<FiChrome className="w-7 h-7 text-gray-700" />), component: "Safari" },
   { id: "terminal", title: "Terminal", icon: (<MdTerminal className="w-7 h-7 text-gray-700" />), component: "Terminal" },
   { id: "vscode", title: "VS Code", icon: (<TbBrandVscode className="w-7 h-7 text-gray-700" />), component: "VSCode" },
   { id: "resume", title: "Resume", icon: (<HiDocumentText className="w-7 h-7 text-gray-700" />), component: "Resume" },
@@ -71,6 +71,6 @@ export default function Dock({ onAppClick, onLaunchpadClick, activeAppIds }: Doc
   }));
 
   return (
-      <FloatingDock items={links} />
+    <FloatingDock items={links} />
   );
 }

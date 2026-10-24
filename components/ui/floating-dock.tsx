@@ -35,7 +35,7 @@ const FloatingDockMobile = ({
   className?: string;
 }) => {
   const launchpadItem = items[0]; // Get only the first item (Launchpad)
-  
+
   return (
     <button
       onClick={launchpadItem.onClick}
@@ -59,10 +59,10 @@ const FloatingDockDesktop = ({
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);
-  
+
   // Check if custom position is provided (for left side)
   const isLeftPosition = className?.includes("left-");
-  
+
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(isLeftPosition ? e.pageY : e.pageX)}
@@ -138,7 +138,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div onClick={onClick} className="">
+    <div onClick={onClick} role="button" tabIndex={0} className="cursor-pointer">
       <motion.div
         ref={ref}
         style={{ width, height }}

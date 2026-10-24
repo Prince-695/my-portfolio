@@ -6,36 +6,27 @@ import Link from 'next/link';
 import { useState } from 'react'
 import { MdOutlineMail } from 'react-icons/md';
 import { MdConnectWithoutContact } from "react-icons/md";
+import { feedback } from '@/lib/sound-feedback';
 
 
-const items = [
-    {
-        title: 'GitHub',
-        icon: <LucideGithub className='w-5 h-5 ' />,
-        href: 'https://github.com/Prince-695',
-    },
-    {
-      title: 'LinkedIn',
-      icon: <Linkedin className='w-5 h-5 ' />,
-      href: 'https://www.linkedin.com/in/prince-rathod-3a9b1b2b8/',
-    },
-    {
-      title: 'Mail',
-      icon: <MdOutlineMail className='w-5 h-5 ' />,
-      href: 'mailto:rathodprince411@gmail.com'
-    },
-    {
-      title: 'Instagram',
-      icon: <Instagram className='w-5 h-5 ' />,
-      href: 'https://www.instagram.com/prince_rathod695',
-    },
-    {
-        title: 'Twitter',
-        icon: <Twitter className='w-5 h-5 ' />,
-        href: 'https://x.com/Prince_Rathod69',
-    },
-    
-]
+import { profileData } from '@/data';
+
+const getSocialIcon = (iconType: string) => {
+  switch (iconType) {
+    case 'github': return <LucideGithub className='w-5 h-5 ' />;
+    case 'linkedin': return <Linkedin className='w-5 h-5 ' />;
+    case 'mail': return <MdOutlineMail className='w-5 h-5 ' />;
+    case 'instagram': return <Instagram className='w-5 h-5 ' />;
+    case 'twitter': return <Twitter className='w-5 h-5 ' />;
+    default: return <LucideGithub className='w-5 h-5 ' />;
+  }
+};
+
+const items = profileData.socials.map((s) => ({
+  title: s.title,
+  icon: getSocialIcon(s.iconType),
+  href: s.href,
+}));
 
 // Desktop IconContainer with simple hover scale
 function IconContainer({
@@ -50,9 +41,12 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={href} target="_blank" >
+    <Link href={href} target="_blank" onClick={() => feedback("click", 6)}>
       <div
-        onMouseEnter={() => setHovered(true)}
+        onMouseEnter={() => {
+          setHovered(true);
+          feedback("subtle", 3);
+        }}
         onMouseLeave={() => setHovered(false)}
         className="relative flex h-12 w-12 items-center justify-center rounded-full hover:bg-gray-200 transition-colors"
       >

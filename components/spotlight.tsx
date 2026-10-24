@@ -13,6 +13,7 @@ import { HiPaintBrush } from "react-icons/hi2"
 import { WiDayHail } from "react-icons/wi"
 import { BsStars } from "react-icons/bs"
 import { HiDocumentText } from "react-icons/hi2"
+import { feedback } from "@/lib/sound-feedback"
 
 const spotlightApps = [
   { id: "aboutme", title: "About Me", icon: (<FaRegNoteSticky className="w-6 h-6 text-gray-700" />), component: "Notes" },
@@ -25,7 +26,6 @@ const spotlightApps = [
   { id: "flappybird", title: "Flappy Bird", icon: (<LuBird className="w-6 h-6 text-gray-700" />), component: "FlappyBird" },
   { id: "paint", title: "Paint", icon: (<HiPaintBrush className="w-6 h-6 text-gray-700" />), component: "Paint" },
   { id: "weather", title: "Weather", icon: (<WiDayHail className="w-6 h-6 text-gray-700" />), component: "Weather" },
-  { id: "vibe", title: "Vibe", icon: (<BsStars className="w-6 h-6 text-red-600" />), component: "Vibe" },
   
   // Commented out extra apps - uncomment if needed in the future
   // { id: "mail", title: "Mail", icon: (<FaRegEnvelope className="w-6 h-6 text-gray-700" />), component: "Mail" },
@@ -55,11 +55,14 @@ export default function Spotlight({ onClose, onAppClick }: SpotlightProps) {
     // Handle escape key to close
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
+        feedback("subtle", 4)
         onClose()
       } else if (e.key === "ArrowDown") {
+        feedback("subtle", 3)
         setSelectedIndex((prev) => (prev < filteredApps.length - 1 ? prev + 1 : prev))
         e.preventDefault()
       } else if (e.key === "ArrowUp") {
+        feedback("subtle", 3)
         setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev))
         e.preventDefault()
       } else if (e.key === "Enter" && filteredApps.length > 0) {
@@ -94,12 +97,13 @@ export default function Spotlight({ onClose, onAppClick }: SpotlightProps) {
   }, [searchTerm])
 
   const handleAppClick = (app: (typeof spotlightApps)[0]) => {
+    feedback("click", 8)
     onAppClick({
       id: app.id,
       title: app.title,
       component: app.component,
-      position: { x: Math.random() * 200 + 100, y: Math.random() * 100 + 50 },
-      size: { width: 800, height: 600 },
+      position: { x: Math.random() * 120 + 80, y: Math.random() * 60 + 40 },
+      size: { width: 840, height: 600 },
     })
     onClose()
   }

@@ -7,6 +7,8 @@ import SkillsSection from "./about/SkillsSection"
 import ExperienceSection from "./about/ExperienceSection"
 import AchievementsSection from "./about/AchievementsSection"
 
+import { feedback } from "@/lib/sound-feedback"
+
 export default function Notes() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date())
   const [selectedNoteId, setSelectedNoteId] = useState(1)
@@ -41,6 +43,7 @@ export default function Notes() {
   ]
 
   const handleNoteSelect = (id: number) => {
+    feedback("click", 6)
     setSelectedNoteId(id)
     setIsMobileSidebarOpen(false)
   }
